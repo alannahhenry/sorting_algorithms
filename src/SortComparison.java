@@ -61,9 +61,26 @@ class SortComparison {
      */
     static double [] quickSort (double a[]){
 
-        //todo: implement the sort
 
-    }//end quicksort
+        return a;
+    }
+
+    static int partition_quicksort(double array[], int lo, int hi) {
+        double pivot = array[hi];
+        int i = (lo-1);
+        for (int j = lo; j < hi; j++) {
+            if(array[j]< pivot){
+                i++;
+                double tmp = array[i];
+                array[i]=array[j];
+                array[j]=tmp;
+            }
+        }
+        double tmp =array[i+1];
+        array[i+1]=array[hi];
+        array[hi]=tmp;
+        return i+1;
+    }
 
     /**
      * Sorts an array of doubles using Merge Sort.
@@ -85,10 +102,7 @@ class SortComparison {
         //todo: implement the sort
 
     }//end mergesortIterative
-    static int partition_quicksort(double a[], int lo, int hi){
-        double pivot = a[hi];
-        return 0;
-    }
+
 
 
     /**
